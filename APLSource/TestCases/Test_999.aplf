@@ -1,0 +1,39 @@
+ R←Test_999(stopFlag batchFlag);body;buffer;d;f1;f2;n;rf;v;xml;⎕TRAP
+ ⍝ Check the "Version" function and publish.config.
+ ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
+ R←T._Failed
+
+ rf←##.APLTreeUtils2
+
+⍝ First we check whether "Version" returns a valid result:
+ body←⎕SRC rf
+ buffer←##.APLTreeUtils2.Version
+ (v d)←buffer[2 3]
+ f1←5>⍴v
+ f1∨←2>'.'+.=v
+ f1∨←~∧/⎕D∊⍨v~'.'
+
+ f1∨←10≠⍴d
+ f1∨←d[5 8]∨.≠'-'
+ f1∨←~∧/(⎕D,'??')∊⍨d~'-'
+
+⍝ publish.config must be in line with what "Version" returns of course:
+ xml←⎕XML⊃⎕NGET'publish.config'
+ f2←≢/{⍵/⍨3>+\'.'=⍵}¨v(3⊃xml[xml[;2]⍳⊂'version';])
+ f2∨←d≢3⊃xml[xml[;2]⍳⊂'date';]
+
+ :If f1
+     ⎕←'Result of the "Version" function is invalid.'
+ :EndIf
+ :If f2
+     ⎕←'The contents of "publish.config" is not in line with "Version".'
+ :EndIf
+
+ →T.FailsIf f1∨f2
+
+ :If '?'∊d
+ :AndIf 0=1 ∆YesOrNo'The version date carries "?" - carry on anyway?'
+     →T.PassesIf 0
+ :EndIf
+
+ R←T._OK

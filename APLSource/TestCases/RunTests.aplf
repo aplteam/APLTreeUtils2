@@ -1,0 +1,5 @@
+ RunTests
+ Prepare
+ T.Run 1
+ ##.APLTreeUtils2.GoToWebPage ##.CodeCoverage.ProcessDataAndCreateReport T.codeCoverage.filename
+⍝Done
