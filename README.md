@@ -7,7 +7,7 @@ General utilities required by most members of the APLTree library.
 
 Many classes of the APLTree project did `:Include` the namespace script `APLTreeUtils`, and all applications of the APL-cation projects used to call functions in it.
 
-Over the years it turned out that the `:Include` technique has severe drawbacks. With the introduction of Tatin all APLTree members needed to be modified so that they can be packages. Because Tatin requires at least Dyalog 18.0 it was decided to take the opportunity and replace the namespace script `APLTreeUtils` by a class ``APLTreeUtils2`.
+Over the years it turned out that the `:Include` technique has severe drawbacks. With the introduction of Tatin all APLTree members needed to be modified so that they can be packages. Because Tatin requires at least Dyalog 18.0 it was decided to take the opportunity and replace the namespace script `APLTreeUtils` by a class `APLTreeUtils2`.
 
 For all APLTree members a new version (with a bumped major version number) needs to be created anyway at this point (2020-09), so it's a good opportunity to also address the problems caused by `Include`ing the `APLTreeUtils` namespace script at the same time.
 
@@ -16,7 +16,7 @@ But there are more changes under the hood: several functions have been removed f
 
 ## Pros and Cons of `:Include`
 
-Attractive as it seemed to be, including namespaces into practically all (at least at the time) members of the APLTree library came with a severe disadvantage: once people started using it it was practically impossible to add additonal functions because of the possibility of name clashes.
+Attractive as it seemed to be, including namespaces into practically all (at least at the time) members of the APLTree library came with a severe disadvantage: once people started using it it was practically impossible to add additional functions because of the possibility of name clashes.
 
 Another problem was that occasionally the values of `⎕IO` and `⎕ML` seemed to have leaked out from functions in `APLTreeUtils`. Though clearly a Dyalog bug that should get fixed, to this day it's not clear whether the bug has really disappeared, despite several attempts. So it seems better to avoid the problem from the start.
 
