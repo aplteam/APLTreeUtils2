@@ -1,5 +1,5 @@
  Initialize;⎕TRAP
  ⎕TRAP←0 'S'
- ⎕SE.aplteam.InitializeAPLTreeProject ⎕THIS
  {}⎕SE.UCMD'cd ',AcreConfig.ProjectFolder
+ ⎕SE.aplteam.InitializeAPLTreeProject ⎕THIS
 ⍝Done

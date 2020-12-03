@@ -17,14 +17,12 @@
 
     ∇ r←Version
       :Access Public Shared
-      r←'APLTreeUtils2' '1.1.0.36' '2020-12-03'
+      r←'APLTreeUtils2' '1.0.0.27' '2020-09-06'
     ∇
 
     ∇ History
-    ⍝ * 1.1.0 from 2020-09-26
-    ⍝   * Method `IsRunningAsAdmin` added
-    ⍝ * 1.0.0 from 2020-09-06
-    ⍝   * This is the predecessor of `APLTreeUtils`
+    ⍝ * 1.0.0 from 2020-09-??
+    ⍝   This is the predecessor of `APLTreeUtils`.
     ∇
 
     ∇ r←{x}Lowercase txt
@@ -256,18 +254,6 @@
       :EndIf
     ∇
 
-    ∇ r←IsRunningAsAdmin;IsUserAnAdmin
-      ⍝ Tells whether this process is being "Run as Administrator" (Windows) or has sudo rights (others)
-      :Access Public Shared
-      :If 'Win'≡APLTreeUtils2.GetOperatingSystem''
-          :Trap r←0
-              r←⍎⎕NA'I Shell32|IsUserAnAdmin'
-          :EndTrap
-      :Else
-          r←{∨/' sudo '⍷' ',⍵,' '}⊃⎕SH'groups ',⎕AN
-      :EndIf
-    ∇
-
     ∇ r←GetOperatingSystem dummy
       :Access Public Shared
    ⍝ Returns one of: "Win", "Mac", "AIX", "Lin".\\
@@ -318,14 +304,15 @@
 
     ∇ r←{length}FormatDateTime ts;ts2;formatstring;bool;buffer
       :Access Public Shared
-    ⍝ Formats the right argument (defaults to `⎕TS` if empty) as a string with 'YYYY-MM-DD hh:mm:ss by default\\
+    ⍝ Formats the right argument (defaults to `⎕TS` if empty) as a string with:\\
+    ⍝ 'YYYY-MM-DD HH:MM:SS.MILLISECOND\\
     ⍝ The right argument can be one of:
     ⍝ * A single float (like 20120102030405) representing date and time.
     ⍝ * A simple vector of length 6 or 7 representing a timestamp (`⎕TS`).
     ⍝ * A matrix of either floats or vectors (length 6 or 7) representing a DateTime.
     ⍝ Note that you cannot mix floats and time stamps.\\
     ⍝ If the right argument has not 7 but 6 or 3 elements, formatting is done accordingly.\\
-    ⍝ Via the left argument the length can be set to
+    ⍝ Via the left argument the length of the right argument can be set to
     ⍝ ⍬, 3, 6 or 7; default is 6; ⍬ Accepts any length of the right argument which is 3, 6 or 7.\\
     ⍝ If the right argument is a...
     ⍝ * simple vector, a string is returned.
@@ -385,12 +372,12 @@
                                              ⍝ and catenate them all together
           part←{((⍴⍵)⍴⍺↑1)⊂⍵}                ⍝ partition ⍵ into chunks of length ⍺
      
-          0=2|⎕DR ⍵:'UTF-8'⎕UCS 2∘⊥∘(8∘↑)¨8 part{(-8|≢⍵)↓⍵}6 bits{(⍵≠64)/⍵}chars⍳⍵
+          0=2|⎕DR ⍵:'UTF-8'⎕UCS 2∘⊥∘(8∘↑)¨8 part{(-8|⍴⍵)↓⍵}6 bits{(⍵≠64)/⍵}chars⍳⍵
                                              ⍝ decode a string into octets
      
           four←{                             ⍝ use 4 characters to encode either
-              8=≢⍵:'=='∇ ⍵,0 0 0 0           ⍝   1,
-              16=≢⍵:'='∇ ⍵,0 0               ⍝   2
+              8=⍴⍵:'=='∇ ⍵,0 0 0 0           ⍝   1,
+              16=⍴⍵:'='∇ ⍵,0 0               ⍝   2
               chars[2∘⊥¨6 part ⍵],⍺          ⍝   or 3 octets of input
           }
           cats←⊃∘(,/)∘((⊂'')∘,)              ⍝ catenate zero or more strings
