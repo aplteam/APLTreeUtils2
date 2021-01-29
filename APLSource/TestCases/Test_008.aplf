@@ -2,7 +2,7 @@
 ⍝ Exercise "Uppercase"
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
- A←##.APLTreeUtils2
+ A←APLTreeUtils2
 
  →T.FailsIf''≢buffer←A.Uppercase''
  →T.FailsIf'KAI JAEGER APL SOFTWARE TEAM'≢buffer←A.Uppercase'KAI JAEGER APL Software Team'

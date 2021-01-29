@@ -1,9 +1,9 @@
- R←Test_025(stopFlag batchFlag);A;⎕TRAP;res;qdmx
+ R←Test_025(stopFlag batchFlag);A;⎕TRAP;res;qdmx;F
 ⍝ Exercise  `Base64`
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
 
- (A F)←##.(APLTreeUtils2 FilesAndDirs)
+ A←APLTreeUtils2 ⋄ F←FilesAndDirs
  →T.FailsIf 1≠A.IsDevelopment
 
  →T.PassesIf 129>⌈/⎕UCS res←A.Base64 ⎕AV

@@ -1,6 +1,6 @@
  R←Test_007(stopFlag batchFlag);A;buffer;⎕TRAP;noOf;result
 ⍝ Exercise "Lowercase"
- A←##.APLTreeUtils2
+ A←APLTreeUtils2
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
 

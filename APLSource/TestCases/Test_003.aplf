@@ -1,6 +1,6 @@
  R←Test_003(stopFlag batchFlag);buffer;A;⎕TRAP
 ⍝ Exercise "FormatDateTime"
- A←##.APLTreeUtils2
+ A←APLTreeUtils2
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
 

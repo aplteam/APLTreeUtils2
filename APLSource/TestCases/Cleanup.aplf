@@ -1,4 +1,4 @@
  Cleanup;home
  #.⎕EX'Obstacle'
  home←¯1↓GetTestFilesHome
- {}##.FilesAndDirs.RmDir home
+ {}FilesAndDirs.RmDir home

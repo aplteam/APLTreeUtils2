@@ -1,6 +1,6 @@
  R←Test_010(stopFlag batchFlag);A;newline;buffer;⎕TRAP
 ⍝ Exercise "Split"
- A←##.APLTreeUtils2
+ A←APLTreeUtils2
  newline←⎕UCS 13 10
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')

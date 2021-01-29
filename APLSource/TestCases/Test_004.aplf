@@ -2,7 +2,7 @@
 ⍝ Exercise "GoToWebPage"
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
- A←##.APLTreeUtils2
+ A←APLTreeUtils2
 
  :If batchFlag
      R←T._NoBatchTest
@@ -29,17 +29,17 @@
          :EndIf
      :EndIf
 
-     fn←(¯4↓##.FilesAndDirs.GetTempFilename''),'.html'
+     fn←(¯4↓FilesAndDirs.GetTempFilename''),'.html'
      fn←(¯5↓fn),' with spaces',¯5↑fn
      html←'<h1>Homemade</h1><p>This page was created on the fly.</p><p>Note that the filename contains spaces.</p>'
-     (⊂html)##.FilesAndDirs.NPUT fn
+     (⊂html)FilesAndDirs.NPUT fn
      success←A.GoToWebPage'file://',fn
      →T.PassesIf success
      :If 0=1 ∆YesOrNo'Do you see ',fn,' (watch the two spaces!) in ',browser
          :Return
      :EndIf
      ⎕DL 0.2
-     ##.FilesAndDirs.DeleteFile fn
+     FilesAndDirs.DeleteFile fn
 
      :If 'Mac'≡A.GetOperatingSystem ⍬
          success←'Safari'A.GoToWebPage'aplwiki.com'
