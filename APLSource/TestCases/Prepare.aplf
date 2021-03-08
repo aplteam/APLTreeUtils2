@@ -1,7 +1,6 @@
  Prepare;testPath;testFilename;ask;answer
  ⎕IO←1 ⋄ ⎕ML←1
  T←⎕NEW Tester2 ⎕THIS
- T.custom_1←'Not ready yet'
  testPath←(⊃1 ⎕NPARTS''),'TestResults'
  testFilename←testPath,'/CodeCoverage'
  :If ⎕NEXISTS testPath
