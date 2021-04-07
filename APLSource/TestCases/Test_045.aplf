@@ -5,6 +5,6 @@
 
  A←APLTreeUtils2
 
- →T.PassesIf 1 1 1 0 0≡17 A.AtLeastVersion¨15 16 17 17.1 18
+ →T.PassesIf 0 0 1 1 1≡17 A.AtLeastVersion¨15 16 17 17.1 18
 
  R←T._OK
