@@ -2,7 +2,7 @@
 ⍝ Exercise "GoToWebPage"
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
- A←APLTreeUtils2
+ A←##.APLTreeUtils2
 
  :If batchFlag
      R←T._NoBatchTest

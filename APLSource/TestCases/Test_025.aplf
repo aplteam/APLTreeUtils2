@@ -3,7 +3,7 @@
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
 
- A←APLTreeUtils2 ⋄ F←FilesAndDirs
+ A←##.APLTreeUtils2 ⋄ F←FilesAndDirs
  →T.FailsIf 1≠A.IsDevelopment
 
  →T.PassesIf 129>⌈/⎕UCS res←A.Base64 ⎕AV

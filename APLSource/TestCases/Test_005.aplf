@@ -1,6 +1,6 @@
  R←Test_005(stopFlag batchFlag);A;buffer;⎕TRAP
 ⍝ Exercise "IsChar"
- A←APLTreeUtils2
+ A←##.APLTreeUtils2
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
 
