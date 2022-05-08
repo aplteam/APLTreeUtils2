@@ -22,7 +22,9 @@
 
     ∇ History
     ⍝ * 1.1.4 from 2021-05-??
-    ⍝   * Test cases added for perfect coverage
+    ⍝   * Internal changes
+    ⍝     * Test cases added for perfect coverage
+    ⍝     * acre replaced by Cider
     ⍝ * 1.1.3 from 2021-04-07
     ⍝   * `AtLeastVersion` was NOT buggy, its test case was
     ⍝ * 1.1.2 from 2021-04-06
