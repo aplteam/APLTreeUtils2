@@ -3,28 +3,32 @@
 ⍝ While `APLTreeUtils` was a namespace scipt designed to be included into pretty much every member of the
 ⍝ APLTree library, `APLTreeUtils2` is a class with shared methods. You are supposed to call those methods.
 ⍝ This has some major advantageous over the old approach:
-⍝ * It's possible to add new functins to `APLTreeUtils`. With the old approach there was always the possibility
+⍝ * It's possible to add new functions to `APLTreeUtils`. With the old approach there was always the possibility
 ⍝   of a name clash, so adding new function was practically impossible.
 ⍝ * The sequence of fixing does not matter (though with lazy fixing that should not be an issue anymore anyway,
 ⍝    but at the time of writing it still is).
 ⍝ * Over the years we have seen rare `⎕IO` and `⎕ML` issues with `:Include`. We just avoid the possibility now.\\
 ⍝ For a list with the precise differences between `APLTreeUtils` and `APLTreeUtils2` see the project ReadMe on
 ⍝ GitHub. Note that there are many. Most importantly, `APLTreeUtils2` requires Dyalog 18.0.
-⍝ Kai Jaeger - APL Team Ltd.\\
+⍝ Kai Jaeger\\
 ⍝ Homepage: <https://github.com/aplteam/APLTreeUtils2/>
 
     ⎕ML←⎕IO←1
 
     ∇ r←Version
       :Access Public Shared
-      r←'APLTreeUtils2' '1.1.4+53' '2021-05-??'
+      r←'APLTreeUtils2' '1.1.4-beta+61' '2021-08-01'
     ∇
 
     ∇ History
-    ⍝ * 1.1.4 from 2021-05-??
+    ⍝ * 1.1.4 from 2021-08-01      
+    ⍝ NOTE: release not yet published since all changes are internal!
+    ⍝   * Admin.Make introduced; uses the MakeHelper package which is expected in ⎕SE
+    ⍝   * Development dependencies updated
+    ⍝   * README polished
     ⍝   * Internal changes
     ⍝     * Test cases added for perfect coverage
-    ⍝     * acre replaced by Cider
+    ⍝     * acre replaced by Cider  
     ⍝ * 1.1.3 from 2021-04-07
     ⍝   * `AtLeastVersion` was NOT buggy, its test case was
     ⍝ * 1.1.2 from 2021-04-06

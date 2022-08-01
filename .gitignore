@@ -1,4 +1,5 @@
 aplcore
-Dist/
-change_history/
-TestResults/
+/Dist/
+CONTINUE.dws
+/TestResults/
+conga.crash

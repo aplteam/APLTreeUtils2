@@ -1,0 +1,8 @@
+ Make flag
+ :If 0=⎕SE.⎕NC'MakeHelpers'
+     'The package https://github.com/aplteam/MakeHelpers is required in ⎕SE'⎕SIGNAL 6
+ :Else
+     :If flag
+         ⎕SE.MakeHelpers.CreateTatinPackageFromSingleScript ##.APLTreeUtils2
+     :EndIf
+ :EndIf

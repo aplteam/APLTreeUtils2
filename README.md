@@ -34,16 +34,31 @@ Another problem was that occasionally the values of `⎕IO` and `⎕ML` seemed t
 * `FindPathTo`; with Tatin there is no need for this anymore
 
 
-## Added Functions
+## List of all Functions
 
-* `Assert`         
-* `AtLeastVersion` 
-* `Base64`         
-* `Create_UUID`                
-* `IsScripted`     
-* `Version`        
+* `Assert`
+* `AtLeastVersion`
+* `Base64`        
+* `Create_UUID`
+* `DLB`
+* `DMB`
+* `DTB`
+* `FormatDateTime`
+* `GetOperatingSystem`
+* `GoToWebPage`
+* `IsChar`
+* `IsDevelopment`
+* `IsRunningAsAdmin`
+* `IsScripted`
+* `Last`
+* `Lowercase`
+* `Split`
+* `SplitPath`
+* `ToNum`
+* `Uppercase`
+* `Version`
 
-For details execute `]ADOC.APLTreeUtils2`
+For details execute `]ADOC APLTreeUtils2`
 
 ## Renamed functions
 
