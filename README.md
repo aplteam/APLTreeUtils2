@@ -2,6 +2,7 @@
 
 General utilities required by most members of the APLTree library.
 
+**Note:** `APLTreeUtils2` releases are published as [Tatin](https://tatin.dev "Link to the principal Tatin Registry") packages, see there.
 
 ## Overview
 
