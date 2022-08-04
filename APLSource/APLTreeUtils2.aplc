@@ -17,12 +17,12 @@
 
     ∇ r←Version
       :Access Public Shared
-      r←'APLTreeUtils2' '1.1.4-beta+61' '2021-08-01'
+      r←'APLTreeUtils2' '1.1.4-beta+61' '2021-08-04'
     ∇
 
     ∇ History
-    ⍝ * 1.1.4 from 2021-08-01      
-    ⍝ NOTE: release not yet published since all changes are internal!
+    ⍝ * 1.1.4 from 2021-08-04
+    ⍝ NOTE: release not yet published as package since all changes are internal
     ⍝   * Admin.Make introduced; uses the MakeHelper package which is expected in ⎕SE
     ⍝   * Development dependencies updated
     ⍝   * README polished
