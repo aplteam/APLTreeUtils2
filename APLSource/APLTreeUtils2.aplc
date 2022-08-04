@@ -17,7 +17,7 @@
 
     ∇ r←Version
       :Access Public Shared
-      r←'APLTreeUtils2' '1.1.4-beta+61' '2021-08-04'
+      r←'APLTreeUtils2' '1.1.4-beta+62' '2021-08-04'
     ∇
 
     ∇ History
