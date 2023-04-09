@@ -1,8 +1,12 @@
- Make flag
- :If 0=⎕SE.⎕NC'MakeHelpers'
-     'The package https://github.com/aplteam/MakeHelpers is required in ⎕SE'⎕SIGNAL 6
- :Else
-     :If flag
-         ⎕SE.MakeHelpers.CreateTatinPackageFromSingleScript ##.APLTreeUtils2
-     :EndIf
+ Make flag;M;C;path;zipFilename;res;version;cfg
+ :If flag
+     M←⎕SE.MakeHelpers
+     C←##.CiderConfig
+     path←C.HOME,'/Dist/'
+     cfg←⎕JSON⍠('Dialect' 'JSON5')⊢⊃⎕NGET C.HOME,'/apl-package.json'
+     version←M.CompileVersionNumberPattern cfg
+     M.RecreateFolder path
+     zipFilename←⎕SE.Tatin.BuildPackage C.HOME path version
+     ⎕←'*** New version build successfully:',M.CR,'   ',zipFilename
  :EndIf
+ ⍝Done

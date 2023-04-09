@@ -17,18 +17,19 @@
 
     ∇ r←Version
       :Access Public Shared
-      r←'APLTreeUtils2' '1.1.4-beta+62' '2021-08-04'
+      r←'APLTreeUtils2' '1.2.0+62' '2023-04-09'
     ∇
 
     ∇ History
-    ⍝ * 1.1.4 from 2021-08-04
-    ⍝ NOTE: release not yet published as package since all changes are internal
+    ⍝ * 1.2.0 from 2023-03-21
+    ⍝   * New function `LazyMatch` added
     ⍝   * Admin.Make introduced; uses the MakeHelper package which is expected in ⎕SE
     ⍝   * Development dependencies updated
     ⍝   * README polished
+    ⍝   * Bug fix: GoToWebPage did not work on a Mac
     ⍝   * Internal changes
     ⍝     * Test cases added for perfect coverage
-    ⍝     * acre replaced by Cider  
+    ⍝     * acre replaced by Cider
     ⍝ * 1.1.3 from 2021-04-07
     ⍝   * `AtLeastVersion` was NOT buggy, its test case was
     ⍝ * 1.1.2 from 2021-04-06
@@ -72,6 +73,11 @@
     ⍝ Returns a 1 for classes, interfaces and scripted namespaces and 0 otherwise.
       :Access Public Shared
       r←{11 16::0 ⋄ 1⊣⎕SRC ⍵}y
+    ∇
+
+    ∇ r←x LazyMatch y
+      :Access Public Shared
+      r←(∧/x∊y)∧(∧/y∊x)
     ∇
 
     ∇ {r}←{msg}Assert y;EN;success
@@ -262,7 +268,7 @@
               :EndTrap
           :Case 'Mac'
               :Trap 11
-                  {}⎕SH'open Safari ',Url
+                  {}⎕SH'open -a Safari ',Url
               :Else
                   success←0
               :EndTrap

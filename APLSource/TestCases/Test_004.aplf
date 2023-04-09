@@ -10,13 +10,12 @@
      rideFlag←3501⌶⍬
      browser←(1+rideFlag)⊃'your default browser?' 'the RIDE browser?'
      :If ~rideFlag
-         ⍞←'Please open a new (=empty) window of your default browser now, then press <enter> '
-         {}⍞
+         CommTools.Pause'Please open a new (=empty) window of your default browser now.'
      :EndIf
 
      success←A.GoToWebPage'aplwiki.com'
      →T.PassesIf success
-     :If 0=1 ∆YesOrNo'Do you see http://aplwiki.com in ',browser
+     :If 0=1 CommTools.YesOrNo 'Do you see http://aplwiki.com in ',browser
          :Return
      :EndIf
 
@@ -24,7 +23,7 @@
          exe←'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
          success←exe A.GoToWebPage'httpS://vector.org.uk'
          →T.PassesIf success
-         :If 0=1 ∆YesOrNo'Do you see httpS://vector.org.uk in Chrome?'
+         :If 0=1 CommTools.YesOrNo'Do you see httpS://vector.org.uk in Chrome?'
              :Return
          :EndIf
      :EndIf
@@ -35,7 +34,7 @@
      (⊂html)FilesAndDirs.NPUT fn
      success←A.GoToWebPage'file://',fn
      →T.PassesIf success
-     :If 0=1 ∆YesOrNo'Do you see ',fn,' (watch the two spaces!) in ',browser
+     :If 0=1 CommTools.YesOrNo'Do you see ',fn,' (watch the two spaces!) in ',browser
          :Return
      :EndIf
      ⎕DL 0.2
@@ -44,7 +43,7 @@
      :If 'Mac'≡A.GetOperatingSystem ⍬
          success←'Safari'A.GoToWebPage'aplwiki.com'
          →T.PassesIf success
-         :If 0=1 ∆YesOrNo'Do you see http://aplwiki.com in Safari'
+         :If 0=1 CommTools.YesOrNo'Do you see http://aplwiki.com in Safari'
              :Return
          :EndIf
      :EndIf
