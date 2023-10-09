@@ -19,5 +19,5 @@
   source: "APLSource/APLTreeUtils2.aplc",
   tags: "tools,utilities",
   userCommandScript: "",
-  version: "1.2.1+71",
+  version: "1.2.2+72",
 }
