@@ -1,5 +1,5 @@
  R←Test_025(stopFlag batchFlag);A;⎕TRAP;res;qdmx;F
-⍝ Exercise  `Base64`
+⍝ Exercise "Base64"
  R←T._Failed
  ⎕TRAP←(999 'C' '. ⍝ Deliberate error')(0 'N')
 
