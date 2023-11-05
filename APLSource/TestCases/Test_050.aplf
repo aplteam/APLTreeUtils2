@@ -9,6 +9,6 @@
  res←{A.Create_UUID}¨noOf⍴0
  →T.PassesIf noOf=≢∪res
  →T.PassesIf 36∧.=≢¨res
- →T.PassesIf 4∧.='-'+.=¨res
+ →T.PassesIf ∧/4=+/'-'=↑res
 
  R←T._OK

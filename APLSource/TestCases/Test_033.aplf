@@ -13,5 +13,8 @@
  →T.FailsIf 1 2≢A.ToNum'1 2'
  →T.FailsIf ⍬≢A.ToNum'APL'
  →T.FailsIf ⍬≢A.ToNum'-2'
+ →T.FailsIf ⍬≢A.ToNum''
+ →T.FailsIf 0≢0 A.ToNum''
+ →T.FailsIf 5≢5 A.ToNum ''
 
  R←T._OK
