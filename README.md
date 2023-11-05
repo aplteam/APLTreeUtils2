@@ -39,7 +39,8 @@ Another problem was that occasionally the values of `⎕IO` and `⎕ML` seemed t
 
 * `Assert`
 * `AtLeastVersion`
-* `Base64`        
+* `Base64`
+* `BitsToInt`     
 * `Create_UUID`
 * `DLB`
 * `DMB`
@@ -47,6 +48,7 @@ Another problem was that occasionally the values of `⎕IO` and `⎕ML` seemed t
 * `FormatDateTime`
 * `GetOperatingSystem`
 * `GoToWebPage`
+* `Int2Bits`
 * `IsChar`
 * `IsDevelopment`
 * `IsRunningAsAdmin`
