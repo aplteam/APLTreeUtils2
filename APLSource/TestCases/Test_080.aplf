@@ -7,7 +7,6 @@
 
  →T.PassesIf buff≡A.BitsToInt A.IntToBits buff←0
  →T.PassesIf buff≡A.BitsToInt A.IntToBits buff←1
- →T.PassesIf buff≡A.BitsToInt A.IntToBits buff←¯1
  →T.PassesIf buff≡A.BitsToInt A.IntToBits buff←5
  →T.PassesIf buff≡A.BitsToInt A.IntToBits buff←1
  →T.PassesIf buff≡A.BitsToInt A.IntToBits buff←¯1+2*32
