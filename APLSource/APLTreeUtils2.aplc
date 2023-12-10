@@ -17,10 +17,12 @@
 
     ∇ r←Version
       :Access Public Shared
-      r←'APLTreeUtils2' '1.3.0+62' '2023-11-05'
+      r←'APLTreeUtils2' '1.3.1+62' '2023-12-01'
     ∇
 
     ∇ History
+    ⍝ * 1.3.1 from 2023-12-01
+    ⍝   * `CreateUUID` required to set `⎕RL` due to the fact that the seed is the same in every new namespace.
     ⍝ * 1.3.0 from 2023-11-05
     ⍝   * `ToNum` now accepts a left argument which is returned in case the right argument is an empty vector.
     ⍝   * New methods: `BitsToInt` and `IntToBits`
@@ -314,6 +316,7 @@
     ∇ r←Create_UUID
     ⍝ Produces a UUID
       :Access Public Shared
+      ⎕rl[1]←⍬
       r←'-'@(4+5×⍳4)⊢(⎕D,⎕C ⎕A)[4(9+|)@20⊢5@15?36⍴16]
     ∇
 
